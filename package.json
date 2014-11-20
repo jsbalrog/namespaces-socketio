@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "stop": "echo not implemented",
-    "start": "node ./app.js"
+    "start": "node ./namespace.js"
   },
   "dependencies": {
     "body-parser": "1.4.3",
