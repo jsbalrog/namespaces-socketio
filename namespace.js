@@ -9,4 +9,8 @@ io.sockets.on('connection', function(socket) {
 	socket.on('ping', function() {
 		socket.broadcast.emit('ping', { username: socket.username });
 	});
+	
+	socket.on('privatePing', function(data) {
+		io.sockets.connected[data.socket].emit('ping', { username: socket.username, priv, true });
+	});
 });
