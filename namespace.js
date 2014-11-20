@@ -5,4 +5,8 @@ io.sockets.on('connection', function(socket) {
 		socket.username = data.username;
 		socket.broadcast.emit('join', { username: data.username, socket: socket.id  });
 	});
-})
+	
+	socket.on('ping', function() {
+		socket.broadcast.emit('ping', { username: socket.username });
+	});
+});
