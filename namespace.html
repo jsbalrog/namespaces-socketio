@@ -60,6 +60,24 @@
         user.username +
         '<button class="private_ping" data-socket="' + user.socket + '">Ping Me</button></li>'
     }
+
+    function wireEvents(area, socketio) {
+      var users = area.find('.users'),
+          events = area.find('.events');
+
+      area.on('click', function(e) {
+        if(e.target.className === 'join') {
+          socketio.emit('join', { username: $username.val() });
+        } else if(e.target.className === 'ping') {
+          socketio.emit('ping');
+        } else if(e.target.className === 'private_ping') {
+          socketio.emit('privatePing', { socket: e.target.getAttribute('data-socket') });
+        }
+      });
+
+      socketio.on('join', function(user) {
+      })
+    }
   </script>
 </body>
 
