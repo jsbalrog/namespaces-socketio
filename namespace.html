@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ping Pong</title>
-    <script type="text/javascript" src="socket.io.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
-    <style>
-    .areas { float: left; width: 50%;}
-    </style>
-  </head>
-  <body>
+
+<head>
+  <title>Ping Pong</title>
+  <script type="text/javascript" src="socket.io.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+  <style>
+    .areas {
+      float: left;
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="text" id="username">
+  </div>
+  <div class="areas default">
+    Default
+    <button class="join">Join</button>
+    <button class="ping">Ping</button>
     <div>
-      <input type="text" id="username">
+      Users
+      <ul class="users">
+      </ul>
     </div>
-    <div class="areas default">
-      Default
-      <button class="join">Join</button>
-      <button class="ping">Ping</button>
-      <div>
-        Users
-        <ul class="users">
-        </ul>
-      </div>
-      <div>
-        Events
-      <ul class="events">      </ul>
+    <div>
+      Events
+      <ul class="events"></ul>
     </div>
   </div>
   <div class="areas vip">
@@ -32,13 +37,14 @@
     <button class="ping">Ping</button>
     <div>
       Users
-    <ul class="users">      </ul>
+      <ul class="users"></ul>
+    </div>
+    <div>
+      Events
+      <ul class="events"></ul>
+    </div>
   </div>
-  <div>
-    Events
-  <ul class="events">      </ul>
-</div>
-</div>
-<script></script>
+  <script></script>
 </body>
+
 </html>
